@@ -45,7 +45,7 @@ const CountrySelector = () => {
 						<Divider />
 						{countriesList.map((country, index) => (
 							<MenuItem value={country} key={index}>
-								{country}
+								{country === 'US' ? 'United States' : country}
 							</MenuItem>
 						))}
 						{/* <MenuItem value={countriesList[0]}>{countriesList[0]}</MenuItem> */}
