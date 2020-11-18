@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
-// import { covidContext } from './context/CovidDataStore';
-// import Cards from './components/Cards';
-import Dashboard from './components/Dashboard';
 
+import './App.css';
+
+import Dashboard from './components/Dashboard';
 import CountrySelector from './components/CountrySelector';
+import VictoryChartZoom from './examples/VictoryChartZoom';
 
 function App() {
 	// const {
@@ -27,6 +27,7 @@ function App() {
 		<div className="container">
 			<CountrySelector />
 			<Dashboard />
+			<VictoryChartZoom />
 		</div>
 	);
 }
