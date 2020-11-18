@@ -7,6 +7,7 @@ import DashboardCard from './DashboardCard';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
 
@@ -89,9 +90,14 @@ const Dashboard = () => {
 		);
 	} else {
 		return (
-			<Typography variant="h4" className={classes.loadingMessage}>
-				Loading Dashboard. Please Wait...
-			</Typography>
+			<>
+				<Typography variant="h4" className={classes.loadingMessage}>
+					Loading Dashboard. Please Wait...
+				</Typography>
+				<div style={{ textAlign: 'center' }}>
+					<CircularProgress />
+				</div>
+			</>
 		);
 	}
 };
