@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 // import { covidContext } from './context/CovidDataStore';
-import Cards from './components/Cards';
+// import Cards from './components/Cards';
+import Dashboard from './components/Dashboard';
+
 import CountrySelector from './components/CountrySelector';
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
 	return (
 		<div className="container">
 			<CountrySelector />
-			<Cards />
+			<Dashboard />
 		</div>
 	);
 }
