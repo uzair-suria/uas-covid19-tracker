@@ -44,7 +44,7 @@ const DashboardCard = ({ increase, currCases, caseType }) => {
 						<CountUp start={0} end={currCases} separator="," />
 					</Typography>
 					<Typography variant="caption" className={cardClass.lastDay}>
-						{increase > 0 ? '+' : '-'}
+						{increase >= 0 ? '+' : '-'}
 						<CountUp start={0} end={increase} separator="," />
 					</Typography>
 				</CardContent>
