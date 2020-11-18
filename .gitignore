@@ -24,3 +24,4 @@ yarn-error.log*
 
 # reference files
 src/components/mui-grid-example.js
+src/examples/*
