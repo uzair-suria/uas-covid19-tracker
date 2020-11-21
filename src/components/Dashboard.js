@@ -13,16 +13,22 @@ import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
 	card: {
-		padding: 5,
+		padding: 3,
 		marginTop: 20,
 	},
 	loadingMessage: {
-		color: grey[600],
+		color: grey['A700'],
 		textAlign: 'center',
+		backgroundColor: 'rgba(230, 230, 230, 0.6)',
 	},
 	title: {
 		color: grey[700],
 		textAlign: 'center',
+	},
+	paper: {
+		margin: '15px 10px',
+		padding: '10px 5px',
+		backgroundColor: 'rgba(250, 250, 250, 0.8)',
 	},
 });
 
@@ -43,7 +49,7 @@ const Dashboard = () => {
 
 		console.log(currConfirmedCases, currRecoveredCases, currDeathsCases);
 		return (
-			<Paper>
+			<Paper className={classes.paper}>
 				<Typography variant="h5" className={classes.title}>
 					{country === 'global'
 						? 'Worldwide'
@@ -60,7 +66,7 @@ const Dashboard = () => {
 						alignItems="center"
 						justify="space-evenly"
 					>
-						<Grid item xs={12} sm={4} md={3}>
+						<Grid item xs={12} sm={3}>
 							<DashboardCard
 								currCases={currConfirmedCases}
 								increase={currConfirmedCases - prevConfirmedCases}
@@ -68,7 +74,7 @@ const Dashboard = () => {
 								align="center"
 							/>
 						</Grid>
-						<Grid item xs={12} sm={4} md={3}>
+						<Grid item xs={12} sm={3}>
 							<DashboardCard
 								currCases={currRecoveredCases}
 								increase={currRecoveredCases - prevRecoveredCases}
@@ -76,7 +82,20 @@ const Dashboard = () => {
 								align="center"
 							/>
 						</Grid>
-						<Grid item xs={12} sm={4} md={3}>
+						<Grid item xs={12} sm={3}>
+							<DashboardCard
+								currCases={currConfirmedCases - currRecoveredCases}
+								increase={
+									currConfirmedCases -
+									currRecoveredCases -
+									prevConfirmedCases +
+									prevRecoveredCases
+								}
+								caseType={'Active'}
+								align="center"
+							/>
+						</Grid>
+						<Grid item xs={12} sm={3}>
 							<DashboardCard
 								currCases={currDeathsCases}
 								increase={currDeathsCases - prevDeathsCases}
@@ -94,7 +113,7 @@ const Dashboard = () => {
 				<Typography variant="h4" className={classes.loadingMessage}>
 					Loading Dashboard. Please Wait...
 				</Typography>
-				<div style={{ textAlign: 'center' }}>
+				<div style={{ textAlign: 'center', height: '100vh' }}>
 					<CircularProgress />
 				</div>
 			</>
