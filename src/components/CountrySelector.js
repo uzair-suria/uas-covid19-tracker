@@ -38,6 +38,7 @@ const CountrySelector = () => {
 						id="country-selector"
 						value={country}
 						onChange={handleChange}
+						style={{ backgroundColor: 'rgba(255,255,255,0.8)' }}
 					>
 						<MenuItem value={'global'}>{'Worldwide'}</MenuItem>
 						<Divider />
