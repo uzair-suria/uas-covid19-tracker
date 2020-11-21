@@ -6,19 +6,22 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 // import { covidContext } from '../context/CovidDataStore';
 import CountUp from 'react-countup';
-import { red, indigo, green, grey /* orange*/ } from '@material-ui/core/colors';
+import { red, indigo, green, grey, deepOrange } from '@material-ui/core/colors';
 
 import classNames from 'classnames';
 
 const CardTheme = makeStyles({
 	root: {
-		backgroundColor: `rgba(245, 245, 245, 0.8)`,
+		backgroundColor: `rgba(245, 245, 245, 0.6)`,
 	},
 	infected: {
 		borderBottom: `10px solid ${indigo[300]}`,
 	},
 	recovered: {
 		borderBottom: `10px solid ${green[300]}`,
+	},
+	active: {
+		borderBottom: `10px solid ${deepOrange[400]}`,
 	},
 	deaths: {
 		borderBottom: `10px solid ${red[300]}`,
@@ -44,7 +47,7 @@ const DashboardCard = ({ increase, currCases, caseType }) => {
 						<CountUp start={0} end={currCases} separator="," />
 					</Typography>
 					<Typography variant="caption" className={cardClass.lastDay}>
-						{increase > 0 ? '+' : '-'}
+						{increase >= 0 ? '+' : ''}
 						<CountUp start={0} end={increase} separator="," />
 					</Typography>
 				</CardContent>
