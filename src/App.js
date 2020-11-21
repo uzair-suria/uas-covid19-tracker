@@ -1,33 +1,27 @@
+// Pure React imports
 import React from 'react';
 
+// CSS Import
 import './App.css';
 
+// React Component Imports
 import Dashboard from './components/Dashboard';
 import CountrySelector from './components/CountrySelector';
-import VictoryChartZoom from './examples/VictoryChartZoom';
+import CovidCharts from './components/CovidCharts';
+import AppBar from './components/AppBar';
+import Footer from './components/Footer';
+
+// Material-UI Imports
+// import classNames from 'classnames';
 
 function App() {
-	// const {
-	// 	country,
-	// 	setCountry,
-	// 	confirmed,
-	// 	setConfirmed,
-	// 	recovered,
-	// 	setRecovered,
-	// 	deaths,
-	// 	setDeaths,
-	// 	countriesList,
-	// 	setCountriesList,
-	// 	dates,
-	// 	setDates,
-	// } = useContext(covidContext);
-
-	// console.log(`Using Context`, recovered['Antigua and Barbuda']);
 	return (
-		<div className="container">
+		<div className="App">
+			<AppBar />
 			<CountrySelector />
 			<Dashboard />
-			<VictoryChartZoom />
+			<CovidCharts />
+			<Footer />
 		</div>
 	);
 }
