@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
 
 // Charts Imports
-import { Chart, Line, Slider, Tooltip } from 'bizcharts';
+import { Chart, Line, Slider, Tooltip, Legend } from 'bizcharts';
 
 const useStyles = makeStyles({
 	card: {
@@ -85,6 +85,7 @@ const CovidCharts = () => {
 						/>
 						<Tooltip shared showCrosshairs />
 						<Slider height={30} />
+						<Legend position="top" />
 					</Chart>
 				</div>
 			</Paper>
