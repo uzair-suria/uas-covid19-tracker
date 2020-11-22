@@ -47,7 +47,6 @@ const Dashboard = () => {
 		const prevRecoveredCases = recovered[country].recovered[dates.length - 2];
 		const prevDeathsCases = deaths[country].deaths[dates.length - 2];
 
-		console.log(currConfirmedCases, currRecoveredCases, currDeathsCases);
 		return (
 			<Paper className={classes.paper}>
 				<Typography variant="h5" className={classes.title}>
