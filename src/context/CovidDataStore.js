@@ -24,7 +24,7 @@ const CovidDataStore = ({ children }) => {
 
 			console.log(`>>>>>>>>>>>>>>>>Extracting countries<<<<<<<<<<<<<<`);
 			setCountriesList(confirmedData.header.countryList);
-			console.log(`eaw list`, confirmedData.header.countryList);
+			console.log(`raw list`, confirmedData.header.countryList);
 
 			console.log(`>>>>>>>>>>>>>>>>Extracting confirmed cases<<<<<<<<<<<<<<`);
 			let countriesConfirmed = confirmedData;
