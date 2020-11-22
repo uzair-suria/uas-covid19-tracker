@@ -42,4 +42,4 @@ jobs:
         
       # Deploy Surge
       - name: Deploy ReactJS App to Surge
-        run: surge ./build uas-covid19-tracker.surge.sh --token ${{secrets.SURGE_TOKEN}}
+        run: surge ./build https://uas-covid19-tracker.surge.sh --token ${{secrets.SURGE_TOKEN}}
