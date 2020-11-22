@@ -83,12 +83,16 @@ const Dashboard = () => {
 						</Grid>
 						<Grid item xs={12} sm={3}>
 							<DashboardCard
-								currCases={currConfirmedCases - currRecoveredCases}
+								currCases={
+									currConfirmedCases - currRecoveredCases - currDeathsCases
+								}
 								increase={
 									currConfirmedCases -
 									currRecoveredCases -
-									prevConfirmedCases +
-									prevRecoveredCases
+									currDeathsCases -
+									(prevConfirmedCases - prevRecoveredCases - prevDeathsCases)
+									// prevConfirmedCases +
+									// prevRecoveredCases
 								}
 								caseType={'Active'}
 								align="center"
